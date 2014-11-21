@@ -232,7 +232,11 @@ function init() {
     socket.emit('message', "seance_end" , true);
 
     reset();
-    $d.trigger('timerAqua');
+    
+    setTimeout(function(){
+      $d.trigger('timerAqua');
+    },1000);
+    
   };
 
   //////////////////////////////
@@ -427,7 +431,7 @@ function init() {
         if(sec < 10){
           sec = "0" + sec;
         };
-        document.getElementById('timerAqua').innerHTML = 'Immersion dans<br \>00:' + min + ':' + sec;
+        document.getElementById('timerAqua').innerHTML = 'Fin du nettoyage de l\'aquarium dans<br \>00:' + min + ':' + sec;
       };
     }, 800);
     $timerAqua.addClass("off");
